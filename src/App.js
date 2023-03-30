@@ -20,11 +20,24 @@ const Boton = styled.button`
 
 function App() {
 
-  const consultarAPI = () => {
-    console.log('consultando...');
+  const consultarAPI = async () => {
+    const api = await fetch(`https://api.breakingbadquotes.xyz/v1/quotes`)
+    const frase = await api.json()
+    console.log(frase[0])
   }
 
 
+  // const consultarAPI = () => {
+  //   const api = fetch(`https://api.breakingbadquotes.xyz/v1/quotes`)
+  //   const frase = api.then( respuesta => respuesta.json())
+  //   frase.then (resultado => console.log(resultado))
+  // }
+
+  // const consultarAPI = () => {
+  //   fetch(`https://api.breakingbadquotes.xyz/v1/quotes`)
+  //     .then( respuesta => respuesta.json())
+  //     .then (resultado => console.log(resultado))
+  // }
 
   return (
     <Contenedor>
